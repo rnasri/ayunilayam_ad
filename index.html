@@ -2,235 +2,189 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayunilayam - Meru Sansthapana Chikitsa™ Carousel</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg-dark: #121811;
-    --card-bg: #1F281E;
-    --gold: #C29B53;
-    --gold-light: #E5C378;
-    --olive: #3D5239;
-    --cream: #F8F3EA;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background-color: var(--bg-dark);
+    background-color: #141a14;
+    color: #FAF6F0;
     font-family: 'Montserrat', sans-serif;
-    color: var(--cream);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 30px 20px;
+    padding: 40px 20px;
   }
-
   header {
     text-align: center;
     margin-bottom: 30px;
   }
-  header h1 {
+  h1 {
     font-family: 'Playfair Display', serif;
-    color: var(--gold-light);
-    font-size: 32px;
+    font-size: 38px;
+    color: #C29B53;
+    letter-spacing: 0.05em;
     margin-bottom: 8px;
   }
-  header p {
-    color: #A0B09C;
-    font-size: 16px;
+  p {
+    font-size: 18px;
+    color: #A3B19B;
   }
-
   .carousel-container {
     position: relative;
-    width: 100%;
-    max-width: 520px;
-    background-color: var(--card-bg);
-    border: 2px solid var(--gold);
+    width: 480px;
+    height: 600px;
     border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .slide-display {
-    width: 100%;
-    aspect-ratio: 4/5;
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    background-color: #000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    border: 2px solid #C29B53;
+    background: #000;
   }
-  .slide-display img {
+  .slide-stage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .slide-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
   }
-
-  .controls {
+  .slide-img.active {
+    opacity: 1;
+  }
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(44, 62, 43, 0.85);
+    color: #C29B53;
+    border: 1.5px solid #C29B53;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
-  }
-  .btn {
-    background: var(--olive);
-    color: var(--cream);
-    border: 1px solid var(--gold);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
+    justify-content: center;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     transition: all 0.2s ease;
   }
-  .btn:hover {
-    background: var(--gold);
-    color: var(--bg-dark);
+  .nav-btn:hover {
+    background: #C29B53;
+    color: #2C3E2B;
   }
-  .slide-counter {
-    font-weight: 600;
-    color: var(--gold-light);
-    font-size: 16px;
-  }
-
-  .thumbnails {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    width: 100%;
-    max-width: 520px;
+  .prev { left: 14px; }
+  .next { right: 14px; }
+  .counter {
     margin-top: 20px;
-    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #C29B53;
+  }
+  .thumbnail-grid {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
   }
   .thumb {
-    width: 60px;
-    aspect-ratio: 4/5;
-    border-radius: 6px;
+    width: 80px;
+    height: 100px;
+    border-radius: 8px;
     overflow: hidden;
     border: 2px solid transparent;
     cursor: pointer;
-    flex-shrink: 0;
     opacity: 0.6;
     transition: all 0.2s ease;
-  }
-  .thumb.active {
-    border-color: var(--gold-light);
-    opacity: 1;
-    transform: scale(1.05);
   }
   .thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
-  .actions {
-    margin-top: 25px;
-    display: flex;
-    gap: 15px;
-  }
-  .download-btn {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: #121811;
-    font-weight: 700;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(194, 155, 83, 0.4);
-    transition: all 0.2s ease;
-  }
-  .download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(194, 155, 83, 0.6);
+  .thumb.active, .thumb:hover {
+    opacity: 1;
+    border-color: #C29B53;
+    box-shadow: 0 0 12px rgba(194, 155, 83, 0.5);
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Ayunilayam - Carousel Preview</h1>
-  <p>10-Slide Instagram Carousel (1080 × 1350 px)</p>
+  <h1>Ayunilayam — Meru Sansthapana Chikitsa™</h1>
+  <p>Instagram Carousel Preview (1080 × 1350 px)</p>
 </header>
 
 <div class="carousel-container">
-  <div class="slide-display">
-    <img id="current-slide-img" src="images/slide_01_cover.png" alt="Slide 1">
+  <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+  <div class="slide-stage">
+    <img src="images/slide_01_symptoms.png" class="slide-img active" alt="Slide 1">
+    <img src="images/slide_02_conditions.png" class="slide-img" alt="Slide 2">
+    <img src="images/slide_03_cover.png" class="slide-img" alt="Slide 3">
+    <img src="images/slide_04_assessment.png" class="slide-img" alt="Slide 4">
+    <img src="images/slide_05_correction.png" class="slide-img" alt="Slide 5">
+    <img src="images/slide_06_healing.png" class="slide-img" alt="Slide 6">
+    <img src="images/slide_07_recovery_plan.png" class="slide-img" alt="Slide 7">
+    <img src="images/slide_08_rehab.png" class="slide-img" alt="Slide 8">
+    <img src="images/slide_09_precautions.png" class="slide-img" alt="Slide 9">
+    <img src="images/slide_10_closing.png" class="slide-img" alt="Slide 10">
   </div>
-
-  <div class="controls">
-    <button class="btn" id="prev-btn">← Prev</button>
-    <div class="slide-counter" id="counter">Slide 1 of 10</div>
-    <button class="btn" id="next-btn">Next →</button>
-  </div>
+  <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
 </div>
 
-<div class="thumbnails" id="thumb-container"></div>
+<div class="counter" id="slide-counter">Slide 1 / 10</div>
 
-<div class="actions">
-  <a id="download-current" href="images/slide_01_cover.png" download class="download-btn">
-    ↓ Download Current Slide
-  </a>
-</div>
+<div class="thumbnail-grid" id="thumb-grid"></div>
 
 <script>
-  const slideFiles = [
-    'images/slide_01_cover.png',
-    'images/slide_02_assessment.png',
-    'images/slide_03_correction.png',
-    'images/slide_04_lepana.png',
-    'images/slide_05_panchakarma.png',
-    'images/slide_06_internal.png',
-    'images/slide_07_rehab.png',
-    'images/slide_08_recovery.png',
-    'images/slide_09_philosophy.png',
-    'images/slide_10_closing.png'
-  ];
+  let currentIdx = 0;
+  const slides = document.querySelectorAll('.slide-img');
+  const counter = document.getElementById('slide-counter');
+  const thumbGrid = document.getElementById('thumb-grid');
 
-  let currentIndex = 0;
-  const slideImg = document.getElementById('current-slide-img');
-  const counter = document.getElementById('counter');
-  const downloadLink = document.getElementById('download-current');
-  const thumbContainer = document.getElementById('thumb-container');
-
-  function updateSlide(index) {
-    currentIndex = index;
-    slideImg.src = slideFiles[currentIndex];
-    counter.textContent = `Slide ${currentIndex + 1} of ${slideFiles.length}`;
-    downloadLink.href = slideFiles[currentIndex];
-    downloadLink.download = slideFiles[currentIndex].split('/').pop();
-
-    document.querySelectorAll('.thumb').forEach((thumb, idx) => {
-      thumb.classList.toggle('active', idx === currentIndex);
-    });
-  }
-
-  slideFiles.forEach((file, idx) => {
+  slides.forEach((slide, idx) => {
     const thumb = document.createElement('div');
     thumb.className = `thumb ${idx === 0 ? 'active' : ''}`;
-    thumb.innerHTML = `<img src="${file}" alt="Thumb ${idx + 1}">`;
-    thumb.addEventListener('click', () => updateSlide(idx));
-    thumbContainer.appendChild(thumb);
+    thumb.innerHTML = `<img src="${slide.src}" alt="Thumb ${idx+1}">`;
+    thumb.onclick = () => goToSlide(idx);
+    thumbGrid.appendChild(thumb);
   });
 
-  document.getElementById('prev-btn').addEventListener('click', () => {
-    const newIdx = (currentIndex - 1 + slideFiles.length) % slideFiles.length;
-    updateSlide(newIdx);
-  });
+  function updateCarousel() {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === currentIdx);
+    });
+    document.querySelectorAll('.thumb').forEach((thumb, idx) => {
+      thumb.classList.toggle('active', idx === currentIdx);
+    });
+    counter.innerText = `Slide ${currentIdx + 1} / ${slides.length}`;
+  }
 
-  document.getElementById('next-btn').addEventListener('click', () => {
-    const newIdx = (currentIndex + 1) % slideFiles.length;
-    updateSlide(newIdx);
+  function changeSlide(direction) {
+    currentIdx = (currentIdx + direction + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  function goToSlide(idx) {
+    currentIdx = idx;
+    updateCarousel();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') changeSlide(-1);
+    if (e.key === 'ArrowRight') changeSlide(1);
   });
 </script>
 
