@@ -179,7 +179,7 @@
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 14px 35px rgba(44, 62, 43, 0.16);
-    margin: 10px 0 20px 0;
+    margin: 10px 0 18px 0;
     background-color: #EFE8DC;
     display: flex;
     justify-content: center;
@@ -188,10 +188,10 @@
   }
 
   .photo-frame.photo-height-lg {
-    height: 540px;
+    height: 520px;
   }
   .photo-frame.photo-height-xl {
-    height: 580px;
+    height: 560px;
   }
 
   .photo-frame img {
@@ -201,13 +201,13 @@
     display: block;
   }
 
-  /* Content Cards & List Items */
+  /* Content Cards & List Items (INCREASED FONT SIZE & PADDING) */
   .bullet-list {
     display: flex;
     flex-direction: column;
     gap: 14px;
     width: 100%;
-    max-width: 880px;
+    max-width: 900px;
     margin-top: 5px;
   }
 
@@ -215,20 +215,20 @@
     display: flex;
     align-items: center;
     gap: 18px;
-    font-size: 30px;
+    font-size: 33px; /* INCREASED LARGER TEXT SIZE */
     color: #2C3E2B;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 16px 26px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 16px 28px;
     border-radius: 14px;
-    border: 1.5px solid rgba(194, 155, 83, 0.35);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1.5px solid rgba(194, 155, 83, 0.4);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
   }
 
   .bullet-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
     border: 2.5px solid #9B7B3B;
     display: flex;
     align-items: center;
@@ -237,8 +237,8 @@
   }
   .bullet-icon::after {
     content: '';
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     background-color: #9B7B3B;
     border-radius: 2px;
   }
@@ -248,19 +248,19 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    max-width: 900px;
+    max-width: 920px;
     margin: 15px 0;
   }
 
   .pill-item {
-    font-size: 28px;
+    font-size: 32px; /* INCREASED LARGER PILL TEXT */
     font-weight: 700;
     color: #2C3E2B;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.8);
     border: 2px solid #C29B53;
-    padding: 14px 32px;
+    padding: 15px 34px;
     border-radius: 40px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -268,17 +268,17 @@
   .pill-item::before {
     content: '✦';
     color: #9B7B3B;
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .focused-description {
     font-family: 'Montserrat', sans-serif;
-    font-size: 31px;
-    line-height: 1.55;
-    color: #384536;
+    font-size: 36px; /* INCREASED LARGER DESCRIPTION TEXT */
+    line-height: 1.5;
+    color: #2C3E2B;
     text-align: center;
-    max-width: 920px;
-    font-weight: 500;
+    max-width: 940px;
+    font-weight: 600;
     padding: 0 20px;
   }
 
@@ -431,7 +431,7 @@
   </symbol>
 </svg>
 
-<!-- SLIDE 1: COVER (2ND HEADING EXPANDED TO 46px WITH MARGIN-BOTTOM 40px) -->
+<!-- SLIDE 1: COVER (LARGER DESCRIPTION TEXT 38px & 2ND HEADING 46px) -->
 <div class="slide" id="slide-1">
   <div class="slide-frame"></div>
   <svg class="sun-motif"><use href="#sun-shape"/></svg>
@@ -451,12 +451,11 @@
       <div class="line"></div>
     </div>
 
-    <!-- 2ND HEADING LARGER (46px) TO DIFFERENTIATE FROM DESCRIPTION, WITH 40px SPACING BELOW -->
-    <div class="slide-subtitle" style="font-weight: 700; color: #2C3E2B; font-size: 46px; line-height: 1.25; margin-bottom: 40px; max-width: 950px;">
+    <div class="slide-subtitle" style="font-weight: 700; color: #2C3E2B; font-size: 46px; line-height: 1.25; margin-bottom: 35px; max-width: 950px;">
       A Traditional Ayurvedic Spine Restoration Program
     </div>
 
-    <div class="focused-description" style="font-size: 35px; font-weight: 500; line-height: 1.5; color: #384536; max-width: 940px;">
+    <div class="focused-description" style="font-size: 38px; font-weight: 600; line-height: 1.5; max-width: 940px;">
       A structured, personalized approach to help improve spinal health, mobility, and overall function through classical Ayurvedic principles and rehabilitation.
     </div>
   </div>
@@ -479,7 +478,7 @@
 </div>
 
 
-<!-- SLIDE 2: STEP 1 - DETAILED ASSESSMENT -->
+<!-- SLIDE 2: STEP 1 - DETAILED ASSESSMENT (BULLET TEXT 33px) -->
 <div class="slide" id="slide-2">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -496,7 +495,7 @@
 
     <div class="slide-subtitle">Every treatment begins with understanding your unique condition.</div>
 
-    <div class="photo-frame" style="height: 510px;">
+    <div class="photo-frame" style="height: 480px;">
       <img src="../extracted_photos/clean_photo_02.png" alt="Assessment Photo">
     </div>
 
@@ -522,7 +521,7 @@
 </div>
 
 
-<!-- SLIDE 3: STEP 2 - PERSONALIZED CORRECTION -->
+<!-- SLIDE 3: STEP 2 - PERSONALIZED CORRECTION (DESCRIPTION TEXT 36px) -->
 <div class="slide" id="slide-3">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -541,7 +540,7 @@
       <img src="../extracted_photos/clean_photo_03.png" alt="Spinal Correction Photo">
     </div>
 
-    <div class="focused-description" style="margin-top: 15px;">
+    <div class="focused-description" style="margin-top: 15px; font-size: 36px;">
       Gentle corrective techniques are performed based on your clinical evaluation to restore natural spinal alignment, improve mobility, and relieve nerve pressure.
     </div>
   </div>
@@ -561,7 +560,7 @@
 </div>
 
 
-<!-- SLIDE 4: STEP 3 - AYURVEDIC LEPANA THERAPY -->
+<!-- SLIDE 4: STEP 3 - AYURVEDIC LEPANA THERAPY (DESCRIPTION TEXT 36px) -->
 <div class="slide" id="slide-4">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -580,7 +579,7 @@
       <img src="../extracted_photos/clean_photo_04.png" alt="Lepana Therapy Photo">
     </div>
 
-    <div class="focused-description" style="margin-top: 15px;">
+    <div class="focused-description" style="margin-top: 15px; font-size: 36px;">
       A specially formulated herbal Lepana application designed to penetrate deep tissue layers, reduce localized inflammation, ease muscle stiffness, and support healing.
     </div>
   </div>
@@ -600,7 +599,7 @@
 </div>
 
 
-<!-- SLIDE 5: STEP 4 - PANCHAKARMA SUPPORT -->
+<!-- SLIDE 5: STEP 4 - PANCHAKARMA SUPPORT (PILL TEXT 32px) -->
 <div class="slide" id="slide-5">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -615,7 +614,7 @@
       <div class="line"></div>
     </div>
 
-    <div class="slide-subtitle" style="margin-bottom: 14px;">Targeted therapies advised strictly according to clinical need:</div>
+    <div class="slide-subtitle" style="margin-bottom: 12px;">Targeted therapies advised strictly according to clinical need:</div>
 
     <div class="photo-frame photo-height-lg">
       <img src="../extracted_photos/clean_photo_05.png" alt="Panchakarma Photo">
@@ -645,7 +644,7 @@
 </div>
 
 
-<!-- SLIDE 6: STEP 5 - INTERNAL AYURVEDIC SUPPORT -->
+<!-- SLIDE 6: STEP 5 - INTERNAL AYURVEDIC SUPPORT (BULLET TEXT 33px) -->
 <div class="slide" id="slide-6">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -686,7 +685,7 @@
 </div>
 
 
-<!-- SLIDE 7: STEP 6 - REHABILITATION -->
+<!-- SLIDE 7: STEP 6 - REHABILITATION (BULLET TEXT 33px) -->
 <div class="slide" id="slide-7">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -701,7 +700,7 @@
       <div class="line"></div>
     </div>
 
-    <div class="slide-subtitle" style="margin-bottom: 14px;">Restoring natural movement and long-term strength:</div>
+    <div class="slide-subtitle" style="margin-bottom: 12px;">Restoring natural movement and long-term strength:</div>
 
     <div class="photo-frame photo-height-lg">
       <img src="../extracted_photos/clean_photo_07.png" alt="Rehabilitation Photo">
@@ -729,7 +728,7 @@
 </div>
 
 
-<!-- SLIDE 8: RECOVERY PRECAUTIONS -->
+<!-- SLIDE 8: RECOVERY PRECAUTIONS (BULLET TEXT 31px & PHOTO HEIGHT 450px) -->
 <div class="slide" id="slide-8">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -744,17 +743,17 @@
       <div class="line"></div>
     </div>
 
-    <div class="slide-subtitle" style="margin-bottom: 12px;">Essential precautions for smooth, lasting healing:</div>
+    <div class="slide-subtitle" style="margin-bottom: 10px;">Essential precautions for smooth, lasting healing:</div>
 
-    <div class="photo-frame" style="height: 470px;">
+    <div class="photo-frame" style="height: 450px;">
       <img src="../extracted_photos/clean_photo_08.png" alt="Recovery Care Photo">
     </div>
 
     <div class="bullet-list" style="gap: 12px;">
-      <div class="bullet-item" style="padding: 14px 24px; font-size: 28px;"><div class="bullet-icon"></div> Avoid heavy lifting & strenuous strain</div>
-      <div class="bullet-item" style="padding: 14px 24px; font-size: 28px;"><div class="bullet-icon"></div> Limit excessive forward bending or twisting</div>
-      <div class="bullet-item" style="padding: 14px 24px; font-size: 28px;"><div class="bullet-icon"></div> Reduce prolonged continuous sitting</div>
-      <div class="bullet-item" style="padding: 14px 24px; font-size: 28px;"><div class="bullet-icon"></div> Minimize long-distance travel during therapy</div>
+      <div class="bullet-item" style="padding: 15px 26px; font-size: 31px;"><div class="bullet-icon"></div> Avoid heavy lifting & strenuous strain</div>
+      <div class="bullet-item" style="padding: 15px 26px; font-size: 31px;"><div class="bullet-icon"></div> Limit excessive forward bending or twisting</div>
+      <div class="bullet-item" style="padding: 15px 26px; font-size: 31px;"><div class="bullet-icon"></div> Reduce prolonged continuous sitting</div>
+      <div class="bullet-item" style="padding: 15px 26px; font-size: 31px;"><div class="bullet-icon"></div> Minimize long-distance travel during therapy</div>
     </div>
   </div>
 
