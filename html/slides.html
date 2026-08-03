@@ -201,7 +201,7 @@
     display: block;
   }
 
-  /* Content Cards & List Items (INCREASED FONT SIZE & PADDING) */
+  /* Content Cards & List Items */
   .bullet-list {
     display: flex;
     flex-direction: column;
@@ -215,7 +215,7 @@
     display: flex;
     align-items: center;
     gap: 18px;
-    font-size: 33px; /* INCREASED LARGER TEXT SIZE */
+    font-size: 33px;
     color: #2C3E2B;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.75);
@@ -253,7 +253,7 @@
   }
 
   .pill-item {
-    font-size: 32px; /* INCREASED LARGER PILL TEXT */
+    font-size: 32px;
     font-weight: 700;
     color: #2C3E2B;
     background: rgba(255, 255, 255, 0.8);
@@ -273,7 +273,7 @@
 
   .focused-description {
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px; /* INCREASED LARGER DESCRIPTION TEXT */
+    font-size: 36px;
     line-height: 1.5;
     color: #2C3E2B;
     text-align: center;
@@ -343,10 +343,10 @@
     font-weight: 700;
   }
 
-  /* Bottom Wave Footer (HEIGHT 170px) */
+  /* Sleek Lower Bottom Wave Footer (HEIGHT 115px) */
   .footer-wave-container {
     width: 1080px;
-    height: 170px;
+    height: 115px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -356,7 +356,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 24px;
+    padding-bottom: 22px;
   }
 
   .footer-wave-svg {
@@ -364,7 +364,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 170px;
+    height: 115px;
     z-index: 1;
   }
 
@@ -374,26 +374,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-  }
-
-  /* Bottom Logo (ONLY ON SLIDE 1 & 10) */
-  .footer-logo-box {
-    height: 52px;
-    background: #FAF6F0;
-    border: 1.5px solid #C29B53;
-    padding: 5px 16px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-    margin-bottom: 2px;
-  }
-  .footer-logo-box img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
   }
 
   /* Pagination Dots */
@@ -431,7 +411,7 @@
   </symbol>
 </svg>
 
-<!-- SLIDE 1: COVER (LARGER DESCRIPTION TEXT 38px & 2ND HEADING 46px) -->
+<!-- SLIDE 1: COVER (LOWER GREEN WAVE + REMOVED BOTTOM LOGO) -->
 <div class="slide" id="slide-1">
   <div class="slide-frame"></div>
   <svg class="sun-motif"><use href="#sun-shape"/></svg>
@@ -461,13 +441,10 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,45 C300,85 780,20 1080,55 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,30 C300,55 780,15 1080,38 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
-      <div class="footer-logo-box">
-        <img src="../logo.jpeg" alt="Ayunilayam Logo">
-      </div>
       <div class="pagination-dots">
         <div class="dot active"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -478,7 +455,7 @@
 </div>
 
 
-<!-- SLIDE 2: STEP 1 - DETAILED ASSESSMENT (BULLET TEXT 33px) -->
+<!-- SLIDE 2: STEP 1 - DETAILED ASSESSMENT -->
 <div class="slide" id="slide-2">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -495,7 +472,7 @@
 
     <div class="slide-subtitle">Every treatment begins with understanding your unique condition.</div>
 
-    <div class="photo-frame" style="height: 480px;">
+    <div class="photo-frame" style="height: 500px;">
       <img src="../extracted_photos/clean_photo_02.png" alt="Assessment Photo">
     </div>
 
@@ -507,8 +484,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,50 C350,20 750,80 1080,45 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,35 C350,15 750,55 1080,30 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -521,7 +498,7 @@
 </div>
 
 
-<!-- SLIDE 3: STEP 2 - PERSONALIZED CORRECTION (DESCRIPTION TEXT 36px) -->
+<!-- SLIDE 3: STEP 2 - PERSONALIZED CORRECTION -->
 <div class="slide" id="slide-3">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -546,8 +523,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,40 C400,80 700,25 1080,55 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,28 C400,55 700,18 1080,38 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -560,7 +537,7 @@
 </div>
 
 
-<!-- SLIDE 4: STEP 3 - AYURVEDIC LEPANA THERAPY (DESCRIPTION TEXT 36px) -->
+<!-- SLIDE 4: STEP 3 - AYURVEDIC LEPANA THERAPY -->
 <div class="slide" id="slide-4">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -585,8 +562,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,55 C300,15 780,80 1080,40 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,38 C300,10 780,55 1080,28 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -599,7 +576,7 @@
 </div>
 
 
-<!-- SLIDE 5: STEP 4 - PANCHAKARMA SUPPORT (PILL TEXT 32px) -->
+<!-- SLIDE 5: STEP 4 - PANCHAKARMA SUPPORT -->
 <div class="slide" id="slide-5">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -630,8 +607,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,45 C350,80 750,15 1080,50 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,30 C350,55 750,10 1080,35 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -644,7 +621,7 @@
 </div>
 
 
-<!-- SLIDE 6: STEP 5 - INTERNAL AYURVEDIC SUPPORT (BULLET TEXT 33px) -->
+<!-- SLIDE 6: STEP 5 - INTERNAL AYURVEDIC SUPPORT -->
 <div class="slide" id="slide-6">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -671,8 +648,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,40 C300,75 780,25 1080,55 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,28 C300,50 780,18 1080,38 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -685,7 +662,7 @@
 </div>
 
 
-<!-- SLIDE 7: STEP 6 - REHABILITATION (BULLET TEXT 33px) -->
+<!-- SLIDE 7: STEP 6 - REHABILITATION -->
 <div class="slide" id="slide-7">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -714,8 +691,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,55 C350,15 750,80 1080,40 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,38 C350,10 750,55 1080,28 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -728,7 +705,7 @@
 </div>
 
 
-<!-- SLIDE 8: RECOVERY PRECAUTIONS (BULLET TEXT 31px & PHOTO HEIGHT 450px) -->
+<!-- SLIDE 8: RECOVERY PRECAUTIONS -->
 <div class="slide" id="slide-8">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
@@ -745,7 +722,7 @@
 
     <div class="slide-subtitle" style="margin-bottom: 10px;">Essential precautions for smooth, lasting healing:</div>
 
-    <div class="photo-frame" style="height: 450px;">
+    <div class="photo-frame" style="height: 470px;">
       <img src="../extracted_photos/clean_photo_08.png" alt="Recovery Care Photo">
     </div>
 
@@ -758,8 +735,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,45 C400,80 700,30 1080,55 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,30 C400,55 700,20 1080,38 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -807,8 +784,8 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,40 C300,75 780,25 1080,50 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,28 C300,50 780,18 1080,35 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
@@ -821,7 +798,7 @@
 </div>
 
 
-<!-- SLIDE 10: CLOSING / CALL TO ACTION -->
+<!-- SLIDE 10: CLOSING / CALL TO ACTION (LOWER GREEN WAVE + REMOVED BOTTOM LOGO) -->
 <div class="slide" id="slide-10">
   <div class="slide-frame"></div>
   <svg class="sun-motif"><use href="#sun-shape"/></svg>
@@ -860,13 +837,10 @@
   </div>
 
   <div class="footer-wave-container">
-    <svg class="footer-wave-svg" viewBox="0 0 1080 170" preserveAspectRatio="none">
-      <path fill="#3D5239" d="M0,45 C350,85 750,15 1080,55 L1080,170 L0,170 Z"></path>
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,30 C350,55 750,10 1080,38 L1080,115 L0,115 Z"></path>
     </svg>
     <div class="footer-content">
-      <div class="footer-logo-box">
-        <img src="../logo.jpeg" alt="Ayunilayam Logo">
-      </div>
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
