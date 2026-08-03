@@ -1,0 +1,6 @@
+.DS_Store
+.venv/
+images_original_backup/
+files (1).zip
+extracted_photos/photo_*.png
+extracted_photos/perfect_photo_*.png
