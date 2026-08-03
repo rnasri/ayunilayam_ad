@@ -2,50 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ayunilayam - Meru Sansthapana Chikitsa™ Carousel</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ayunilayam — Spine Care Carousel</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background-color: #141a14;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background-color: #0d120e;
     color: #FAF6F0;
     font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* FULLSCREEN MOBILE CAROUSEL STAGE */
+  .app-viewport {
+    width: 100%;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding: 40px 20px;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    color: #C29B53;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
-  }
-  p {
-    font-size: 18px;
-    color: #A3B19B;
-  }
-  .carousel-container {
+    justify-content: center;
     position: relative;
-    width: 480px;
-    height: 600px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    border: 2px solid #C29B53;
-    background: #000;
+    background: #0d120e;
   }
+
+  /* FLOATING SLEEK HEADER */
+  .mobile-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(13, 18, 14, 0.95) 0%, rgba(13, 18, 14, 0) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 30;
+    pointer-events: none;
+  }
+
+  .brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #C29B53;
+    letter-spacing: 0.12em;
+    pointer-events: auto;
+  }
+
+  .slide-count-badge {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FAF6F0;
+    background: rgba(194, 155, 83, 0.25);
+    border: 1px solid rgba(194, 155, 83, 0.6);
+    padding: 4px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+  }
+
+  /* MAIN SLIDE CONTAINER (Preserves 4:5 Aspect Ratio Maximized) */
+  .carousel-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 100dvh;
+    aspect-ratio: 4 / 5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 769px) {
+    .carousel-wrapper {
+      height: 92dvh;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      border: 2px solid #C29B53;
+    }
+  }
+
   .slide-stage {
     width: 100%;
     height: 100%;
     position: relative;
+    touch-action: pan-y pinch-zoom;
   }
+
   .slide-img {
     width: 100%;
     height: 100%;
@@ -54,11 +114,30 @@
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transform: scale(0.98);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    user-select: none;
+    -webkit-user-drag: none;
   }
+
   .slide-img.active {
     opacity: 1;
+    transform: scale(1);
   }
+
+  /* TOUCH TAP ZONES (LEFT & RIGHT HALF) */
+  .tap-zone {
+    position: absolute;
+    top: 60px;
+    bottom: 70px;
+    width: 35%;
+    z-index: 20;
+    cursor: pointer;
+  }
+  .tap-zone.left { left: 0; }
+  .tap-zone.right { right: 0; }
+
+  /* FLOATING NAVIGATION ARROWS FOR DESKTOP & MOBILE */
   .nav-btn {
     position: absolute;
     top: 50%;
@@ -66,110 +145,139 @@
     background: rgba(44, 62, 43, 0.85);
     color: #C29B53;
     border: 1.5px solid #C29B53;
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 20;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 25;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     transition: all 0.2s ease;
+    backdrop-filter: blur(6px);
   }
-  .nav-btn:hover {
+  .nav-btn:hover, .nav-btn:active {
     background: #C29B53;
     color: #2C3E2B;
   }
-  .prev { left: 14px; }
-  .next { right: 14px; }
-  .counter {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #C29B53;
-  }
-  .thumbnail-grid {
+  .prev { left: 16px; }
+  .next { right: 16px; }
+
+  /* FLOATING BOTTOM PROGRESS BAR & DOTS */
+  .mobile-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(0deg, rgba(13, 18, 14, 0.95) 0%, rgba(13, 18, 14, 0) 100%);
     display: flex;
-    gap: 12px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    max-width: 1000px;
+    gap: 8px;
+    z-index: 30;
+    padding-bottom: 10px;
   }
-  .thumb {
-    width: 80px;
-    height: 100px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid transparent;
+
+  .dots-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.3s ease;
     cursor: pointer;
-    opacity: 0.6;
-    transition: all 0.2s ease;
   }
-  .thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+  .dot-indicator.active {
+    width: 24px;
+    height: 8px;
+    border-radius: 10px;
+    background: #C29B53;
+    box-shadow: 0 0 10px rgba(194, 155, 83, 0.8);
   }
-  .thumb.active, .thumb:hover {
-    opacity: 1;
-    border-color: #C29B53;
-    box-shadow: 0 0 12px rgba(194, 155, 83, 0.5);
+
+  .swipe-hint {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(250, 246, 240, 0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Ayunilayam — Meru Sansthapana Chikitsa™</h1>
-  <p>Instagram Carousel Preview (1080 × 1350 px)</p>
-</header>
-
-<div class="carousel-container">
-  <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-  <div class="slide-stage">
-    <img src="images/slide_01_symptoms.png" class="slide-img active" alt="Slide 1">
-    <img src="images/slide_02_conditions.png" class="slide-img" alt="Slide 2">
-    <img src="images/slide_03_cover.png" class="slide-img" alt="Slide 3">
-    <img src="images/slide_04_assessment.png" class="slide-img" alt="Slide 4">
-    <img src="images/slide_05_correction.png" class="slide-img" alt="Slide 5">
-    <img src="images/slide_06_healing.png" class="slide-img" alt="Slide 6">
-    <img src="images/slide_07_recovery_plan.png" class="slide-img" alt="Slide 7">
-    <img src="images/slide_08_rehab.png" class="slide-img" alt="Slide 8">
-    <img src="images/slide_09_precautions.png" class="slide-img" alt="Slide 9">
-    <img src="images/slide_10_closing.png" class="slide-img" alt="Slide 10">
+<div class="app-viewport">
+  
+  <!-- Floating Header -->
+  <div class="mobile-header">
+    <div class="brand-title">AYUNILAYAM</div>
+    <div class="slide-count-badge" id="slide-badge">1 / 10</div>
   </div>
-  <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
+
+  <!-- Carousel Stage Wrapper -->
+  <div class="carousel-wrapper" id="carousel-wrapper">
+    <button class="nav-btn prev" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
+
+    <div class="tap-zone left" onclick="changeSlide(-1)"></div>
+    <div class="tap-zone right" onclick="changeSlide(1)"></div>
+
+    <div class="slide-stage" id="slide-stage">
+      <img src="images/slide_01_symptoms.png" class="slide-img active" alt="Slide 1">
+      <img src="images/slide_02_conditions.png" class="slide-img" alt="Slide 2">
+      <img src="images/slide_03_cover.png" class="slide-img" alt="Slide 3">
+      <img src="images/slide_04_assessment.png" class="slide-img" alt="Slide 4">
+      <img src="images/slide_05_correction.png" class="slide-img" alt="Slide 5">
+      <img src="images/slide_06_healing.png" class="slide-img" alt="Slide 6">
+      <img src="images/slide_07_recovery_plan.png" class="slide-img" alt="Slide 7">
+      <img src="images/slide_08_rehab.png" class="slide-img" alt="Slide 8">
+      <img src="images/slide_09_precautions.png" class="slide-img" alt="Slide 9">
+      <img src="images/slide_10_closing.png" class="slide-img" alt="Slide 10">
+    </div>
+
+    <button class="nav-btn next" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
+  </div>
+
+  <!-- Floating Footer Progress -->
+  <div class="mobile-footer">
+    <div class="dots-container" id="dots-container"></div>
+    <div class="swipe-hint">Swipe left / right to navigate</div>
+  </div>
+
 </div>
-
-<div class="counter" id="slide-counter">Slide 1 / 10</div>
-
-<div class="thumbnail-grid" id="thumb-grid"></div>
 
 <script>
   let currentIdx = 0;
   const slides = document.querySelectorAll('.slide-img');
-  const counter = document.getElementById('slide-counter');
-  const thumbGrid = document.getElementById('thumb-grid');
+  const slideBadge = document.getElementById('slide-badge');
+  const dotsContainer = document.getElementById('dots-container');
+  const slideStage = document.getElementById('slide-stage');
 
-  slides.forEach((slide, idx) => {
-    const thumb = document.createElement('div');
-    thumb.className = `thumb ${idx === 0 ? 'active' : ''}`;
-    thumb.innerHTML = `<img src="${slide.src}" alt="Thumb ${idx+1}">`;
-    thumb.onclick = () => goToSlide(idx);
-    thumbGrid.appendChild(thumb);
+  // Build Pagination Dots
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.className = `dot-indicator ${idx === 0 ? 'active' : ''}`;
+    dot.onclick = () => goToSlide(idx);
+    dotsContainer.appendChild(dot);
   });
 
   function updateCarousel() {
     slides.forEach((slide, idx) => {
       slide.classList.toggle('active', idx === currentIdx);
     });
-    document.querySelectorAll('.thumb').forEach((thumb, idx) => {
-      thumb.classList.toggle('active', idx === currentIdx);
+    document.querySelectorAll('.dot-indicator').forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentIdx);
     });
-    counter.innerText = `Slide ${currentIdx + 1} / ${slides.length}`;
+    slideBadge.innerText = `${currentIdx + 1} / ${slides.length}`;
   }
 
   function changeSlide(direction) {
@@ -182,10 +290,42 @@
     updateCarousel();
   }
 
+  // Keyboard Navigation
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') changeSlide(-1);
     if (e.key === 'ArrowRight') changeSlide(1);
   });
+
+  // Touch Swipe Navigation for Mobile Devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
+
+  slideStage.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  slideStage.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Ensure horizontal swipe is dominant over vertical scroll
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+      if (diffX < 0) {
+        changeSlide(1); // Swipe Left -> Next Slide
+      } else {
+        changeSlide(-1); // Swipe Right -> Previous Slide
+      }
+    }
+  }
 </script>
 
 </body>
