@@ -76,7 +76,7 @@
     pointer-events: auto;
   }
 
-  /* MAIN SLIDE CONTAINER (Preserves 4:5 Aspect Ratio Maximized) */
+  /* MAIN SLIDE CONTAINER */
   .carousel-wrapper {
     width: 100%;
     height: 100%;
@@ -125,7 +125,7 @@
     transform: scale(1);
   }
 
-  /* TOUCH TAP ZONES (LEFT & RIGHT HALF) */
+  /* TOUCH TAP ZONES */
   .tap-zone {
     position: absolute;
     top: 60px;
@@ -137,7 +137,7 @@
   .tap-zone.left { left: 0; }
   .tap-zone.right { right: 0; }
 
-  /* FLOATING NAVIGATION ARROWS FOR DESKTOP & MOBILE */
+  /* FLOATING NAVIGATION ARROWS */
   .nav-btn {
     position: absolute;
     top: 50%;
@@ -185,12 +185,12 @@
   .dots-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .dot-indicator {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.35);
     transition: all 0.3s ease;
@@ -198,8 +198,8 @@
   }
 
   .dot-indicator.active {
-    width: 24px;
-    height: 8px;
+    width: 22px;
+    height: 7px;
     border-radius: 10px;
     background: #C29B53;
     box-shadow: 0 0 10px rgba(194, 155, 83, 0.8);
@@ -221,7 +221,7 @@
   <!-- Floating Header -->
   <div class="mobile-header">
     <div class="brand-title">AYUNILAYAM</div>
-    <div class="slide-count-badge" id="slide-badge">1 / 10</div>
+    <div class="slide-count-badge" id="slide-badge">1 / 11</div>
   </div>
 
   <!-- Carousel Stage Wrapper -->
@@ -232,16 +232,17 @@
     <div class="tap-zone right" onclick="changeSlide(1)"></div>
 
     <div class="slide-stage" id="slide-stage">
-      <img src="images/slide_01_symptoms.png" class="slide-img active" alt="Slide 1">
-      <img src="images/slide_02_conditions.png" class="slide-img" alt="Slide 2">
-      <img src="images/slide_03_cover.png" class="slide-img" alt="Slide 3">
-      <img src="images/slide_04_assessment.png" class="slide-img" alt="Slide 4">
-      <img src="images/slide_05_correction.png" class="slide-img" alt="Slide 5">
-      <img src="images/slide_06_healing.png" class="slide-img" alt="Slide 6">
-      <img src="images/slide_07_recovery_plan.png" class="slide-img" alt="Slide 7">
-      <img src="images/slide_08_rehab.png" class="slide-img" alt="Slide 8">
-      <img src="images/slide_09_precautions.png" class="slide-img" alt="Slide 9">
-      <img src="images/slide_10_closing.png" class="slide-img" alt="Slide 10">
+      <img src="images/slide_01_hook_cover.png" class="slide-img active" alt="Slide 1">
+      <img src="images/slide_02_symptoms.png" class="slide-img" alt="Slide 2">
+      <img src="images/slide_03_conditions.png" class="slide-img" alt="Slide 3">
+      <img src="images/slide_04_announcement.png" class="slide-img" alt="Slide 4">
+      <img src="images/slide_05_assessment.png" class="slide-img" alt="Slide 5">
+      <img src="images/slide_06_correction.png" class="slide-img" alt="Slide 6">
+      <img src="images/slide_07_healing.png" class="slide-img" alt="Slide 7">
+      <img src="images/slide_08_recovery_plan.png" class="slide-img" alt="Slide 8">
+      <img src="images/slide_09_rehab.png" class="slide-img" alt="Slide 9">
+      <img src="images/slide_10_precautions.png" class="slide-img" alt="Slide 10">
+      <img src="images/slide_11_closing.png" class="slide-img" alt="Slide 11">
     </div>
 
     <button class="nav-btn next" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
@@ -317,12 +318,11 @@
     const diffX = touchEndX - touchStartX;
     const diffY = touchEndY - touchStartY;
 
-    // Ensure horizontal swipe is dominant over vertical scroll
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
       if (diffX < 0) {
-        changeSlide(1); // Swipe Left -> Next Slide
+        changeSlide(1);
       } else {
-        changeSlide(-1); // Swipe Right -> Previous Slide
+        changeSlide(-1);
       }
     }
   }

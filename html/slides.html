@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ayunilayam Carousel Slides - Version 1 (Main Project)</title>
+<title>Ayunilayam Carousel Slides - Main Project</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * {
@@ -67,7 +67,7 @@
     pointer-events: none;
   }
 
-  /* FIXED HEADER LAYOUT GRID FOR TREATMENT SLIDES 4-9 */
+  /* FIXED HEADER LAYOUT GRID FOR TREATMENT SLIDES 5-9 */
   .step-header-container {
     width: 100%;
     display: flex;
@@ -161,7 +161,7 @@
     max-width: 930px;
   }
 
-  /* Top Right Logo for Step Slides 4-9 */
+  /* Top Right Logo for Step Slides 5-10 */
   .top-right-logo {
     position: absolute;
     top: 40px;
@@ -201,7 +201,7 @@
     object-fit: contain;
   }
 
-  /* ENLARGED VISUAL ICON LIST ITEMS FOR SLIDES 1 & 2 */
+  /* VISUAL ICON LIST ITEMS */
   .icon-list-container {
     display: flex;
     flex-direction: column;
@@ -457,6 +457,25 @@
     font-weight: 700;
   }
 
+  /* SWIPE HOOK PILL BADGE FOR COVER */
+  .swipe-hook-badge {
+    background: linear-gradient(135deg, #3D5239, #2C3E2B);
+    color: #FAF6F0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    padding: 22px 50px;
+    border-radius: 50px;
+    border: 2.5px solid #C29B53;
+    box-shadow: 0 10px 28px rgba(61, 82, 57, 0.22);
+    margin-top: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    letter-spacing: 0.02em;
+  }
+
   /* Sleek Lower Bottom Wave Footer (HEIGHT 115px) */
   .footer-wave-container {
     width: 1080px;
@@ -494,22 +513,22 @@
   .pagination-dots {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
   }
 
   .dot {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.45);
     transition: all 0.3s ease;
   }
 
   .dot.active {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     background-color: #D4AF37;
-    border: 2.5px solid #FAF6F0;
+    border: 2px solid #FAF6F0;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.9);
   }
 </style>
@@ -526,7 +545,7 @@
 </svg>
 
 
-<!-- SLIDE 1: DO YOU HAVE... -->
+<!-- SLIDE 1: HOOK COVER — IS YOUR SPINE TRYING TO TELL YOU SOMETHING? -->
 <div class="slide" id="slide-1">
   <div class="slide-frame"></div>
   <svg class="sun-motif"><use href="#sun-shape"/></svg>
@@ -534,9 +553,52 @@
   <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
     <div class="header-top-tag" style="margin-top: 35px; margin-bottom: 12px;">AYUNILAYAM</div>
 
-    <h1 class="slide-title" style="font-size: 72px; margin-bottom: 8px;">Do You Have…</h1>
+    <div class="cover-logo-box" style="width: 380px; height: 380px; margin: 15px 0 25px 0;">
+      <img src="../logo.jpeg" alt="Ayunilayam Logo">
+    </div>
+
+    <h1 class="slide-title" style="font-size: 68px; margin-bottom: 16px; line-height: 1.18; max-width: 960px;">
+      Is Your Spine Trying to<br>Tell You Something?
+    </h1>
     
-    <div class="title-divider" style="margin: 8px 0 25px 0;">
+    <div class="title-divider" style="margin: 10px 0 25px 0;">
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+    </div>
+
+    <div class="swipe-hook-badge">
+      Swipe to find out what your body may be telling you <span style="color: #D4AF37; font-size: 38px;">→</span>
+    </div>
+  </div>
+
+  <div class="footer-wave-container">
+    <svg class="footer-wave-svg" viewBox="0 0 1080 115" preserveAspectRatio="none">
+      <path fill="#3D5239" d="M0,30 C300,55 780,15 1080,38 L1080,115 L0,115 Z"></path>
+    </svg>
+    <div class="footer-content">
+      <div class="pagination-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SLIDE 2: SYMPTOMS (WITH CUSTOM VISUAL ICONS) -->
+<div class="slide" id="slide-2">
+  <div class="slide-frame"></div>
+  <svg class="sun-motif"><use href="#sun-shape"/></svg>
+
+  <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+    <div class="header-top-tag" style="margin-top: 35px; margin-bottom: 8px;">SPINAL HEALTH AWARENESS</div>
+
+    <h1 class="slide-title" style="font-size: 64px; margin-bottom: 8px;">What Your Body May Be<br>Telling You…</h1>
+    
+    <div class="title-divider" style="margin: 8px 0 22px 0;">
       <div class="line"></div>
       <div class="dot"></div>
       <div class="line"></div>
@@ -577,17 +639,18 @@
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
-        <div class="dot active"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot active"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 2: YOU MAY BE SUFFERING FROM... -->
-<div class="slide" id="slide-2">
+<!-- SLIDE 3: YOU MAY BE SUFFERING FROM... (WITH CUSTOM VISUAL ICONS) -->
+<div class="slide" id="slide-3">
   <div class="slide-frame"></div>
 
   <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
@@ -640,22 +703,23 @@
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
-        <div class="dot"></div><div class="dot active"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 3: PROGRAM INTRODUCTION -->
-<div class="slide" id="slide-3">
+<!-- SLIDE 4: PROGRAM ANNOUNCEMENT — AYUNILAYAM INTRODUCES MERU SANSTHAPANA CHIKITSA -->
+<div class="slide" id="slide-4">
   <div class="slide-frame"></div>
   <svg class="sun-motif"><use href="#sun-shape"/></svg>
 
   <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-    <div class="header-top-tag" style="margin-top: 30px; margin-bottom: 12px; font-size: 30px; letter-spacing: 0.28em;">AYUNILAYAM PRESENTS</div>
+    <div class="header-top-tag" style="margin-top: 30px; margin-bottom: 12px; font-size: 30px; letter-spacing: 0.28em;">AYUNILAYAM INTRODUCES</div>
 
     <div class="cover-logo-box" style="width: 440px; height: 440px; margin: 15px 0 25px 0;">
       <img src="../logo.jpeg" alt="Ayunilayam Logo">
@@ -680,17 +744,18 @@
     </svg>
     <div class="footer-content">
       <div class="pagination-dots">
-        <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 4: STEP 1 COMPREHENSIVE ASSESSMENT -->
-<div class="slide" id="slide-4">
+<!-- SLIDE 5: STEP 1 COMPREHENSIVE ASSESSMENT -->
+<div class="slide" id="slide-5">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
 
@@ -719,16 +784,17 @@
     <div class="footer-content">
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 5: STEP 2 PERSONALIZED SPINE CORRECTION -->
-<div class="slide" id="slide-5">
+<!-- SLIDE 6: STEP 2 PERSONALIZED SPINE CORRECTION -->
+<div class="slide" id="slide-6">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
 
@@ -756,16 +822,17 @@
     <div class="footer-content">
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot active"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 6: STEP 3 AYURVEDIC HEALING -->
-<div class="slide" id="slide-6">
+<!-- SLIDE 7: STEP 3 AYURVEDIC HEALING -->
+<div class="slide" id="slide-7">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
 
@@ -798,16 +865,17 @@
     <div class="footer-content">
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 7: STEP 4 PERSONALIZED RECOVERY PLAN -->
-<div class="slide" id="slide-7">
+<!-- SLIDE 8: STEP 4 PERSONALIZED RECOVERY PLAN -->
+<div class="slide" id="slide-8">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
 
@@ -835,15 +903,16 @@
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 8: STEP 5 REHABILITATION -->
-<div class="slide" id="slide-8">
+<!-- SLIDE 9: STEP 5 REHABILITATION -->
+<div class="slide" id="slide-9">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
 
@@ -872,15 +941,16 @@
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+        <div class="dot"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 9: DURING RECOVERY PRECAUTIONS -->
-<div class="slide" id="slide-9">
+<!-- SLIDE 10: DURING RECOVERY PRECAUTIONS -->
+<div class="slide" id="slide-10">
   <div class="slide-frame"></div>
   <div class="top-right-logo"><img src="../logo.jpeg" alt="Logo"></div>
 
@@ -914,15 +984,16 @@
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot active"></div><div class="dot"></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 10: CLOSING & CALL TO ACTION (WITH PROMINENT BOLD PHONE NUMBER) -->
-<div class="slide" id="slide-10">
+<!-- SLIDE 11: CLOSING & CALL TO ACTION (WITH PROMINENT BOLD PHONE NUMBER) -->
+<div class="slide" id="slide-11">
   <div class="slide-frame"></div>
   <svg class="sun-motif"><use href="#sun-shape"/></svg>
 
@@ -976,7 +1047,8 @@
       <div class="pagination-dots">
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot active"></div>
       </div>
     </div>
   </div>
