@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 0; background: #1a1a1a; display: flex; justify-content: center; }
+  .slide-container {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+  }
+  .base-img {
+    width: 1080px;
+    height: 1350px;
+    object-fit: cover;
+  }
+
+  .top-left-brand-name {
+    position: absolute;
+    top: 42px;
+    left: 55px;
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #9B7B3B;
+    letter-spacing: 0.22em;
+    z-index: 25;
+    text-shadow: 0 2px 8px rgba(250, 246, 240, 0.8);
+  }
+
+  .top-right-logo-box {
+    position: absolute;
+    top: 35px;
+    right: 55px;
+    width: 90px;
+    height: 90px;
+    background: #FAF6F0;
+    border: 2px solid #C29B53;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(61, 82, 57, 0.12);
+    z-index: 25;
+  }
+  .top-right-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .header-patch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 330px;
+    background: radial-gradient(circle at 50% 30%, #FAF6F0 0%, #F1E9DA 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 22px;
+    z-index: 10;
+  }
+
+  .top-tag-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #9B7B3B;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .tag-line-left, .tag-line-right {
+    width: 80px;
+    height: 1.5px;
+    background: #C29B53;
+  }
+  .main-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 700;
+    color: #2C3E2B;
+    text-align: center;
+    line-height: 1.16;
+  }
+  .main-heading span {
+    color: #9B7B3B;
+  }
+</style>
+</head>
+<body>
+<div class="slide-container" id="slide-2-box">
+  <div class="top-left-brand-name">AYUNILAYAM</div>
+  <div class="top-right-logo-box">
+    <img src="file:///Users/raghibnasri/Documents/Projects/ayunilayam_ad/logo.jpeg" alt="Logo">
+  </div>
+  <img src="file:///Users/raghibnasri/Documents/Projects/ayunilayam_ad/extracted_ref/slide_2_ref.png" class="base-img">
+  <div class="header-patch">
+    <div class="top-tag-line">
+      <div class="tag-line-left"></div>
+      COMMON SPINAL CONDITIONS
+      <div class="tag-line-right"></div>
+    </div>
+    <div class="main-heading">
+      Possible Conditions<br><span>Associated With These Signs…</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

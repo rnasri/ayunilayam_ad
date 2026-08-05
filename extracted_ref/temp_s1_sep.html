@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 0; background: #1a1a1a; display: flex; justify-content: center; }
+  .slide-box { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+  .bg-img { width: 1080px; height: 1350px; object-fit: cover; }
+  
+  .top-left-brand-name {
+    position: absolute;
+    top: 42px;
+    left: 55px;
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #9B7B3B;
+    letter-spacing: 0.22em;
+    z-index: 20;
+    text-shadow: 0 2px 8px rgba(250, 246, 240, 0.8);
+  }
+
+  .top-right-logo-box {
+    position: absolute;
+    top: 35px;
+    right: 55px;
+    width: 90px;
+    height: 90px;
+    background: #FAF6F0;
+    border: 2px solid #C29B53;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(61, 82, 57, 0.12);
+    z-index: 20;
+  }
+  .top-right-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+<div class="slide-box" id="slide-1-box">
+  <img src="file:///Users/raghibnasri/Documents/Projects/ayunilayam_ad/extracted_ref/slide_1_ref.png" class="bg-img">
+  <div class="top-left-brand-name">AYUNILAYAM</div>
+  <div class="top-right-logo-box">
+    <img src="file:///Users/raghibnasri/Documents/Projects/ayunilayam_ad/logo.jpeg" alt="Logo">
+  </div>
+</div>
+</body>
+</html>
