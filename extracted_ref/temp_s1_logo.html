@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 0; background: #1a1a1a; display: flex; justify-content: center; }
+  .slide-box { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+  .bg-img { width: 1080px; height: 1350px; object-fit: cover; }
+  .top-brand-bar {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 1080px;
+    height: 65px;
+    background: rgba(250, 246, 240, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
+  .logo-mini {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #C29B53;
+    object-fit: contain;
+    background: #FAF6F0;
+  }
+  .brand-name-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #9B7B3B;
+    letter-spacing: 0.18em;
+  }
+</style>
+</head>
+<body>
+<div class="slide-box" id="slide-1-box">
+  <img src="file:///Users/raghibnasri/Documents/Projects/ayunilayam_ad/extracted_ref/slide_1_ref.png" class="bg-img">
+  <div class="top-brand-bar">
+    <img src="file:///Users/raghibnasri/Documents/Projects/ayunilayam_ad/logo.jpeg" class="logo-mini">
+    <div class="brand-name-text">AYUNILAYAM</div>
+  </div>
+</div>
+</body>
+</html>
