@@ -185,12 +185,12 @@
   .dots-container {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
   }
 
   .dot-indicator {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.35);
     transition: all 0.3s ease;
@@ -198,8 +198,8 @@
   }
 
   .dot-indicator.active {
-    width: 22px;
-    height: 7px;
+    width: 24px;
+    height: 8px;
     border-radius: 10px;
     background: #C29B53;
     box-shadow: 0 0 10px rgba(194, 155, 83, 0.8);
@@ -221,7 +221,7 @@
   <!-- Floating Header -->
   <div class="mobile-header">
     <div class="brand-title">AYUNILAYAM</div>
-    <div class="slide-count-badge" id="slide-badge">1 / 11</div>
+    <div class="slide-count-badge" id="slide-badge">1 / 10</div>
   </div>
 
   <!-- Carousel Stage Wrapper -->
@@ -232,17 +232,16 @@
     <div class="tap-zone right" onclick="changeSlide(1)"></div>
 
     <div class="slide-stage" id="slide-stage">
-      <img src="images/slide_01_hook_cover.png" class="slide-img active" alt="Slide 1">
-      <img src="images/slide_02_symptoms.png" class="slide-img" alt="Slide 2">
-      <img src="images/slide_03_conditions.png" class="slide-img" alt="Slide 3">
-      <img src="images/slide_04_announcement.png" class="slide-img" alt="Slide 4">
-      <img src="images/slide_05_assessment.png" class="slide-img" alt="Slide 5">
-      <img src="images/slide_06_correction.png" class="slide-img" alt="Slide 6">
-      <img src="images/slide_07_healing.png" class="slide-img" alt="Slide 7">
-      <img src="images/slide_08_recovery_plan.png" class="slide-img" alt="Slide 8">
-      <img src="images/slide_09_rehab.png" class="slide-img" alt="Slide 9">
-      <img src="images/slide_10_precautions.png" class="slide-img" alt="Slide 10">
-      <img src="images/slide_11_closing.png" class="slide-img" alt="Slide 11">
+      <img src="images/slide_01_symptoms.png" class="slide-img active" alt="Slide 1">
+      <img src="images/slide_02_conditions.png" class="slide-img" alt="Slide 2">
+      <img src="images/slide_03_cover.png" class="slide-img" alt="Slide 3">
+      <img src="images/slide_04_assessment.png" class="slide-img" alt="Slide 4">
+      <img src="images/slide_05_correction.png" class="slide-img" alt="Slide 5">
+      <img src="images/slide_06_healing.png" class="slide-img" alt="Slide 6">
+      <img src="images/slide_07_recovery_plan.png" class="slide-img" alt="Slide 7">
+      <img src="images/slide_08_rehab.png" class="slide-img" alt="Slide 8">
+      <img src="images/slide_09_precautions.png" class="slide-img" alt="Slide 9">
+      <img src="images/slide_10_closing.png" class="slide-img" alt="Slide 10">
     </div>
 
     <button class="nav-btn next" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
